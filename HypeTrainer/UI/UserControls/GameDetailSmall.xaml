@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="HypeTrainer.UI.UserControls.GameDetailSmall"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HypeTrainer.UI.UserControls"
+             mc:Ignorable="d" 
+             MaxHeight="110"
+             MaxWidth="400"
+             Background="White"
+             d:DesignHeight="110" 
+             d:DesignWidth="400">
+    
+    
+    <UserControl.Resources>
+        <Style x:Key="ImageStyle" TargetType="Image">
+            <Setter Property="Margin" Value="10,0"/>
+            <Setter Property="Stretch" Value="UniformToFill"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="TextBlockStyle" BasedOn="{StaticResource BasicFontStyle}" TargetType="TextBlock">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    
+    
+    
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0"
+               Grid.RowSpan="5"
+               Grid.Column="0"
+               Source="{Binding GameImage}"
+               Style="{StaticResource ImageStyle}">
+        </Image>
+
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   FontWeight="DemiBold"
+                   Text="{Binding Name}"
+                   Style="{StaticResource TextBlockStyle}">
+        </TextBlock>
+        
+        
+        <!--Header:-->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   Text="Main Story"
+                   Style="{StaticResource TextBlockStyle}">
+        </TextBlock>
+
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Text="Main + Extra"
+                   Style="{StaticResource TextBlockStyle}">
+        </TextBlock>
+
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   Text="Completionist"
+                   Style="{StaticResource TextBlockStyle}">
+        </TextBlock>
+
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   Text="Average"
+                   Style="{StaticResource TextBlockStyle}">
+        </TextBlock>
+
+        <!--Times:-->
+        <TextBlock Grid.Row="1"
+                   Grid.Column="2"
+                   Style="{StaticResource TextBlockStyle}"
+                   Text="{Binding TimeMainStory}">
+        </TextBlock>
+
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="2"
+                   Style="{StaticResource TextBlockStyle}"
+                   Text="{Binding TimeMainExtra}">
+        </TextBlock>
+
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="2"
+                   Style="{StaticResource TextBlockStyle}"
+                   Text="{Binding TimeCompletionist}">
+        </TextBlock>
+
+
+        <TextBlock Grid.Row="4"
+                   Grid.Column="2"
+                   Style="{StaticResource TextBlockStyle}"
+                   Text="{Binding TimeAverage}">
+        </TextBlock>
+
+
+    </Grid>
+</UserControl>

@@ -51,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
@@ -71,7 +72,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Windows\MainWindow.xaml">
+    <Page Include="UI\Pages\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\CollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\UserControls\GameDetailSmall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -79,11 +100,33 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Import\HtmlWebImport.cs" />
+    <Compile Include="Objects\Date.cs" />
     <Compile Include="Objects\Game.cs" />
+    <Compile Include="Objects\GameStub.cs" />
+    <Compile Include="Objects\GameTime.cs" />
+    <Compile Include="UI\Pages\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CalendarViewModel.cs" />
+    <Compile Include="ViewModels\CollectionViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="Services\HltbApiService.cs" />
-    <Compile Include="Services\HtmlHltbScrapperService.cs" />
+    <Compile Include="UI\UserControls\GameDetailSmall.xaml.cs">
+      <DependentUpon>GameDetailSmall.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\HypeTrainerViewModel.cs" />
-    <Compile Include="Windows\MainWindow.xaml.cs">
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="UI\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

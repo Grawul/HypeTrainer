@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using HypeTrainer.ViewModels;
 
-namespace HypeTrainer.Windows
+namespace HypeTrainer.UI.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

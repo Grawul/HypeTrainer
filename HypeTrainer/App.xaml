@@ -2,8 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:HypeTrainer"
-             StartupUri="Windows/MainWindow.xaml">
+             StartupUri="UI/Windows/MainWindow.xaml">
+    
+    
     <Application.Resources>
-         
+        
+        
+        
+         <Style x:Key="BasicFontStyle">
+             <Setter Property="Control.FontSize" Value="12"/>
+         </Style>
     </Application.Resources>
 </Application>

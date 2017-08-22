@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCL.WPF;
+using HypeTrainer.Objects;
 using HypeTrainer.Services;
 
 namespace HypeTrainer.ViewModels
@@ -12,8 +14,13 @@ namespace HypeTrainer.ViewModels
     {
         #region Fields
 
-        private string _gameName;
+        private BindingList<Game> _games;
+        private BindingList<Date> _dates;
 
+        private CalendarViewModel _calendarViewModel;
+        private CollectionViewModel _collectionViewModel;
+        private SearchViewModel _searchViewModel;
+        private SettingsViewModel _settingsViewModel;
 
         #endregion
 
@@ -22,7 +29,13 @@ namespace HypeTrainer.ViewModels
 
         public HypeTrainerViewModel()
         {
-            GameName = HltbApiService.GetGame("test").Name;
+            Games = new BindingList<Game>();
+            Dates = new BindingList<Date>();
+
+            CalendarViewModel = new CalendarViewModel(Games, Dates);
+            CollectionViewModel = new CollectionViewModel(Games, Dates);
+            SearchViewModel = new SearchViewModel(Games, Dates);
+            SettingsViewModel = new SettingsViewModel();
         }
 
         #endregion
@@ -30,13 +43,54 @@ namespace HypeTrainer.ViewModels
 
         #region Properties
 
-        public string GameName
+        public BindingList<Game> Games
         {
-            get { return _gameName; }
+            get { return _games; }
             set
             {
-                _gameName = value; 
-                PropertyChange("GameName");
+                _games = value; 
+                PropertyChange("Games");
+            }
+        }
+
+        public BindingList<Date> Dates
+        {
+            get { return _dates; }
+            set { _dates = value;
+                PropertyChange("Dates");
+            }
+        }
+
+
+        public CalendarViewModel CalendarViewModel
+        {
+            get { return _calendarViewModel; }
+            set { _calendarViewModel = value;
+                PropertyChange("CalendarViewModel");
+            }
+        }
+
+        public CollectionViewModel CollectionViewModel
+        {
+            get { return _collectionViewModel; }
+            set { _collectionViewModel = value;
+                PropertyChange("CollectionViewModel");
+            }
+        }
+
+        public SearchViewModel SearchViewModel
+        {
+            get { return _searchViewModel; }
+            set { _searchViewModel = value;
+                PropertyChange("SearchViewModel");
+            }
+        }
+
+        public SettingsViewModel SettingsViewModel
+        {
+            get { return _settingsViewModel; }
+            set { _settingsViewModel = value;
+                PropertyChange("SettingsViewModel");
             }
         }
 
